@@ -3,6 +3,7 @@ package com.ekremkocak.employeemanager.service;
 import com.ekremkocak.employeemanager.exception.UserNotFoundException;
 import com.ekremkocak.employeemanager.model.Employee;
 import com.ekremkocak.employeemanager.repo.EmployeeRepo;
+import jakarta.transaction.Transactional;
 import org.apache.juli.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,6 +38,7 @@ public class EmployeeService {
         return employeeRepo.save(employee);
     }
 
+    @Transactional
     public void deleteEmployee(Long id) {
         employeeRepo.deleteEmployeeById(id);
     }
