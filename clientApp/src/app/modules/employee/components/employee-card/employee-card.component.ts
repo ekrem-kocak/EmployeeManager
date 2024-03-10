@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 import { Employee } from '../../models/employee';
 import { DialogService } from 'primeng/dynamicdialog';
 import { CreateEmployeeComponent } from '../create-employee/create-employee.component';
+import { EmployeeService } from '../../services/employee.service';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-employee-card',
@@ -11,7 +13,10 @@ import { CreateEmployeeComponent } from '../create-employee/create-employee.comp
 export class EmployeeCardComponent {
   @Input() employee: Employee.Model | undefined;
 
-  constructor(public dialogService: DialogService) {}
+  constructor(
+    public dialogService: DialogService,
+    private employeeService: EmployeeService
+  ) {}
 
   editEmployee() {
     this.dialogService.open(CreateEmployeeComponent, {
@@ -20,5 +25,9 @@ export class EmployeeCardComponent {
       },
       width: '50%',
     });
+  }
+
+  delete() {
+    this.employeeService.delete(this.employee!.id).pipe(take(1)).subscribe();
   }
 }

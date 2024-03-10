@@ -20,14 +20,17 @@
           >
         </li>
       </ul>
-      <form class="d-flex" role="search">
+      <form class="d-flex">
         <input
           class="form-control me-2"
           type="search"
           placeholder="Search"
-          aria-label="Search"
+          [(ngModel)]="searchText"
+          [ngModelOptions]="{ standalone: true }"
         />
-        <button class="btn btn-outline-light" type="submit">Search</button>
+        <button type="button" class="btn btn-outline-light" (click)="search()">
+          Search
+        </button>
       </form>
     </div>
   </div>

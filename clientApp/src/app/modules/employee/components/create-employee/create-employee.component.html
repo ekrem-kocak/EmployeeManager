@@ -1,6 +1,6 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
   <h4 class="text-center fw-bold">
-    {{ updateMode ? "UPDATE" : "CREATE" }} EMPLOYEE
+    {{ updateMode ? "UPDATE" : "ADD" }} EMPLOYEE
   </h4>
   <hr />
   <div class="mb-3">
@@ -54,6 +54,6 @@
     [ngClass]="updateMode ? 'btn-warning' : 'btn-primary'"
     [disabled]="form.invalid"
   >
-    {{ updateMode ? "Update" : "Create" }} Employee
+    {{ updateMode ? "Update" : "ADD" }} Employee
   </button>
 </form>
