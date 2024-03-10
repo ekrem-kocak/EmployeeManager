@@ -8,7 +8,11 @@
       <span class="d-inline-block mb-2">{{ employee.phone }}</span>
     </p>
     <div class="text-end">
-      <button type="button" class="btn btn-warning me-2">
+      <button
+        type="button"
+        class="btn btn-warning me-2"
+        (click)="editEmployee()"
+      >
         <i class="bi bi-pencil-fill"></i>
       </button>
       <button type="button" class="btn btn-danger">
