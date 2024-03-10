@@ -5,6 +5,7 @@ import { EmployeeRoutingModule } from './employee-routing.module';
 import { LayoutComponent } from './components/layout/layout.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
+import { EmployeeCardComponent } from './components/employee-card/employee-card.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
     LayoutComponent,
     NavbarComponent,
     EmployeeListComponent,
+    EmployeeCardComponent,
   ],
   imports: [
     CommonModule,
